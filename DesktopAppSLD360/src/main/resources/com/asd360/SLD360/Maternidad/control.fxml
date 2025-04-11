@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/18"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.asd360.SLD360.Maternidad.Control"
+            style="-fx-background-color: #f8f9fa;">
+
+    <top>
+        <VBox alignment="CENTER" spacing="10" style="-fx-padding: 20; -fx-alignment: center;">
+            <Label text="Visualización de Ultrasonidos"
+                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #007bff;" />
+            <Label text="Aquí puedes ver los ultrasonidos recientes y agendar nuevas citas."
+                   style="-fx-font-size: 16px; -fx-text-fill: #495057;" wrapText="true" />
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-padding: 20;">
+            <VBox spacing="30" alignment="CENTER">
+
+                <!-- Contenedor de Ultrasonidos -->
+                <StackPane style="-fx-background-color: white;
+                                  -fx-border-color: #ddd;
+                                  -fx-border-width: 1;
+                                  -fx-border-radius: 12;
+                                  -fx-background-radius: 12;
+                                  -fx-padding: 20;
+                                  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 5);">
+                    <HBox fx:id="ultrasoundContainer" spacing="20" alignment="CENTER">
+                        <!-- Aquí se insertarán dinámicamente los ultrasonidos -->
+                    </HBox>
+                </StackPane>
+
+                <!-- Tarjeta de Agendar Cita -->
+                <VBox maxWidth="450" alignment="CENTER"
+                      style="-fx-background-color: white;
+                             -fx-border-color: #ddd;
+                             -fx-border-width: 1;
+                             -fx-border-radius: 12;
+                             -fx-background-radius: 12;
+                             -fx-padding: 25;
+                             -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 5);">
+
+                    <Label text="Agendar Cita"
+                           style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #007bff;" />
+
+                    <GridPane hgap="15" vgap="15" alignment="CENTER" style="-fx-padding: 20;">
+                        <Label text="Fecha:" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                               style="-fx-font-size: 16px; -fx-text-fill: #495057;" />
+                        <DatePicker fx:id="datePicker" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+                        <Label text="Hora:" GridPane.rowIndex="1" GridPane.columnIndex="0"
+                               style="-fx-font-size: 16px; -fx-text-fill: #495057;" />
+                        <ComboBox fx:id="timeComboBox" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+                        <Label text="Tipo de consulta:" GridPane.rowIndex="2" GridPane.columnIndex="0"
+                               style="-fx-font-size: 16px; -fx-text-fill: #495057;" />
+                        <VBox GridPane.rowIndex="2" GridPane.columnIndex="1" spacing="5">
+                            <RadioButton text="Control rutinario" fx:id="routineRadioButton" />
+                            <RadioButton text="Estudio especializado" fx:id="specializedRadioButton" />
+                        </VBox>
+
+                        <Button text="Confirmar Cita" onAction="#confirmAppointment"
+                                style="-fx-font-size: 16px;
+                                       -fx-background-color: #28a745;
+                                       -fx-text-fill: white;
+                                       -fx-font-weight: bold;
+                                       -fx-background-radius: 8;
+                                       -fx-padding: 10 20;"
+                                GridPane.rowIndex="3" GridPane.columnIndex="1" />
+                    </GridPane>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

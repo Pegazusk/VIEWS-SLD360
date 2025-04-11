@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Admin</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/vendors/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/vendors/line-awesome.min.css" />
+    <link rel="stylesheet" href="../../css/pages/layout.css" />
+    <link rel="stylesheet" href="../../css/pages/specialists.css" />
+    <link rel="stylesheet" href="../../css/vendors/Chart.min.css" />
+    <link rel="icon" href="../../images/covid-19.ico" />
+    <script src="../../js/vendors/jquery.min.js"></script>
+    <script src="../../js/vendors/bootstrap.bundle.min.js"></script>
+    <script src="../../js/global.js"></script>
+    <script src="../../js/vendors/Chart.bundle.min.js"></script>
+    <style>
+        .side-nav {
+            background-color: #002a32;
+            color: #fff;
+            border-right: 1px solid #4f4f4f;
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            transition: all 0.3s ease;
+        }
+
+        .side-nav .list-group-item {
+            background-color: transparent;
+            border: none;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 15px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .side-nav .list-group-item:hover {
+            background-color: #006d77;
+            color: #ffffff;
+        }
+
+        .navbar {
+            background-color: #005a5b;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            color: #ffffff;
+        }
+
+        .navbar-brand {
+            color: white;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            color: white;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            color: #c5c6c7;
+        }
+
+        .txtNombrePersona {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #f4f4f4;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 2rem;
+            width: 100%;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section-content {
+            width: 100%;
+        }
+
+        footer {
+            background-color: #002a32;
+            color: #fff;
+            padding: 1rem;
+            font-size: 0.9rem;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #00bcd4;
+        }
+
+        .row {
+            margin-bottom: 1.5rem;
+        }
+
+        .card.welcome-content-card {
+            margin: 0 auto;
+        }
+
+        .card.app-stats-card {
+            margin: 1rem auto;
+        }
+
+        @media (max-width: 768px) {
+            .side-nav {
+                position: static;
+                width: 100%;
+                height: auto;
+                position: relative;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+
+            .side-nav .list-group-item {
+                font-size: 1rem;
+                padding: 10px;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 1rem;
+            }
+
+            .navbar {
+                flex-wrap: wrap;
+            }
+
+            .footer {
+                position: relative;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg shadow-sm fixed-top">
+            <a class="navbar-brand" href="#" style="color: #ffffff">
+                <img src="../../../img/logo-sld.png" alt="Logo">
+                <span>SLD360</span>
+            </a>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link profile-dropdown" href="#" role="button" data-toggle="dropdown">
+                            <img class="rounded-circle"
+                                src="https://images.vexels.com/media/users/3/153835/isolated/preview/172ddc045ae1707a415adeae0543a5f0-icono-de-trazo-de-color-del-paciente.png"
+                                alt="Perfil">
+                            <span class="txtNombrePersona"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow-lg">
+                            <a class="dropdown-item" href="../../../index.html">
+                                <i class="las la-door-open mr-2"></i>Cerrar sesión
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="d-flex">
+        <div class="side-nav">
+            <ul class="list-group list-group-flush">
+                <a class="list-group-item" href="inicio.html" style="color: #ffffff">
+                    <i class="las la-shapes"></i> <span>Inicio</span>
+                </a>
+                <a class="list-group-item" href="mispacientes.html" style="color: #ffffff">
+                    <i class="las la-user"></i> <span>Mis pacientes</span>
+                </a>
+                <a class="list-group-item" href="miscitas.html" style="color: #ffffff">
+                    <i class="las la-calendar"></i> <span>Citas</span>
+                </a>
+                <a class="list-group-item" href="receta.html" style="color: #ffffff">
+                    <i class="las la-prescription"></i> <span>Recetas</span>
+                </a>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div class="container-fluid">
+                <div class="section">
+                    <h5 class="text-center">Receta Médica</h5>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h5>Nueva Receta</h5>
+                        <p>Complete los datos para generar una receta médica</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Paciente</label>
+                                    <select id="cmbPacientes" class="form-control"></select>
+                                </div>
+                                <div class="form-group" style="display: none;">
+                                    <label>Fecha</label>
+                                    <input type="date" id="txtFecha" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Diagnóstico</label>
+                                    <input type="text" id="txtDiagnostico" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <h6>Medicamentos</h6>
+                                <table class="table" id="tblMedicamentos">
+                                    <thead>
+                                        <tr>
+                                            <th>Medicamento</th>
+                                            <th>Presentación</th>
+                                            <th>Dosis</th>
+                                            <th>Frecuencia</th>
+                                            <th>Duración</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Filas dinámicas -->
+                                    </tbody>
+                                </table>
+                                <button class="btn btn-secondary" onclick="agregarMedicamento()">
+                                    <i class="las la-plus"></i> Agregar Medicamento
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label>Indicaciones adicionales</label>
+                                    <textarea id="txtIndicaciones" class="form-control" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row mt-4">
+                            <div class="col-12 text-center">
+                                <button class="btn btn-dark-red-f-gr" onclick="generarReceta()">
+                                    <i class="las la-file-medical"></i> Generar Receta
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/receta.js"></script>
+</body>
+</html>

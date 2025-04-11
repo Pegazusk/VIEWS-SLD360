@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente Médico Virtual - SLD360</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/index.css">
+</head>
+<body>
+    <header class="cabecera">
+        <div class="container">
+            <a href="../../../index.html" class="logo">
+              <img src="../../../img/logo-sld.png" width="136" height="46" alt="SLD360 home">
+            </a>
+            <nav class="navbar" data-navbar>
+              <div class="navbar-top">
+                <a href="../../../index.html" class="logo">
+                  <img src="../../../img/logo.svg" width="136" height="46" alt="SLD360 home">
+                </a>
+                <button class="nav-close-btn" aria-label="clsoe menu" data-nav-toggler>
+                  <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+                </button>
+              </div>
+              </nav>
+        <h1><i class="fas fa-robot"></i> Asistente Médico SLD360</h1>
+        <p>Estoy aquí para ayudarte con tus consultas médicas</p>
+    </header>
+
+    <div class="contenedor-chat">
+        <div class="mensajes-chat" id="mensajes-chat">
+            <div class="mensaje mensaje-bot">
+                ¡Hola! Soy tu asistente médico virtual. ¿En qué puedo ayudarte hoy?
+                <div class="marca-tiempo">Hoy, 10:00 AM</div>
+            </div>
+        </div>
+
+        <div class="entrada-chat">
+            <input type="text" id="entrada-usuario" placeholder="Escribe tu mensaje..." autofocus>
+            <button id="boton-enviar"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="../../js/global.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

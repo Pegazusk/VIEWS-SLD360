@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/18"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.asd360.SLD360.BaseController"
+            style="-fx-background-color: #f4f4f9;">
+
+    <center>
+        <VBox spacing="30" style="-fx-background-color: white; -fx-border-color: #e1e1e1; -fx-border-radius: 10; -fx-padding: 30; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 5);">
+
+            <!-- Título principal -->
+            <Label text="Cuidado para las Caídas"
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-padding: 0 0 20 0;" />
+
+            <!-- Instrucciones iniciales -->
+            <Label text="Lo primero es mantener la calma y verificar que la persona esté consciente y respirando. Si la persona tiene lesiones, llama a un servicio de emergencia:"
+                   style="-fx-font-size: 16px; -fx-text-fill: #34495e; -fx-wrap-text: true; -fx-padding: 0 0 20 0;" />
+
+            <Button text="Llamada a Emergencias"
+                    style="-fx-font-size: 16px; -fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 12 20; -fx-border-radius: 5;"
+                    onAction="#handleEmergencyCall" />
+
+            <!-- Sección de Primeros Auxilios -->
+            <Label text="Primeros Auxilios"
+                   style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-padding: 20 0 10 0;" />
+
+            <VBox spacing="15">
+                <Label text="1. Mantén a la persona inmóvil." style="-fx-font-size: 16px; -fx-text-fill: #34495e;" />
+                <Label text="2. Verifica signos vitales: respiración, pulso, piel y dilatación de pupilas." style="-fx-font-size: 16px; -fx-text-fill: #34495e;" />
+                <Label text="3. Revisa si hay sangrado o hinchazón." style="-fx-font-size: 16px; -fx-text-fill: #34495e;" />
+                <Label text="4. Aplica hielo localmente para reducir el dolor y la inflamación." style="-fx-font-size: 16px; -fx-text-fill: #34495e;" />
+                <Label text="5. No la muevas si no puede moverse por sí misma." style="-fx-font-size: 16px; -fx-text-fill: #34495e;" />
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

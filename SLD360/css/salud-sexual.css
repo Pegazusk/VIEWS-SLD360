@@ -1,0 +1,35 @@
+/* Estilos para las tarjetas de ETS */
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: var(--blue-ryb);
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: var(--sonic-silver);
+  line-height: 1.6;
+}

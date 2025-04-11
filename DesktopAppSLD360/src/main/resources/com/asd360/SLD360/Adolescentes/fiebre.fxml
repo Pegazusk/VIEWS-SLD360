@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.ProgressBar?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asd360.SLD360.Adolescentes.Fiebre" style="-fx-background-color: #f8f9fa;">
+    <center>
+        <VBox alignment="CENTER" spacing="25" style="-fx-background-color: white; -fx-border-radius: 10; -fx-padding: 30; -fx-background-insets: 10;">
+            <!-- Título principal -->
+            <Text text="Guía Práctica para Manejar la Fiebre en Niños" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-fill: #2c3e50; -fx-text-alignment: center;"/>
+            <Text text="Información médica verificada y recomendaciones prácticas" style="-fx-font-size: 16px; -fx-fill: #7f8c8d; -fx-text-alignment: center;"/>
+
+            <!-- Entrada para la temperatura -->
+            <HBox spacing="15" alignment="CENTER">
+                <Label text="Temperatura (°C):" style="-fx-font-size: 16px; -fx-text-fill: #34495e;"/>
+                <TextField fx:id="temperatureInput" promptText="Ingrese la temperatura" style="-fx-font-size: 16px; -fx-background-color: #ecf0f1; -fx-border-color: #bdc3c7; -fx-padding: 10 15; -fx-border-radius: 5;"/>
+            </HBox>
+
+            <!-- CheckBox para la unidad -->
+            <HBox spacing="15" alignment="CENTER">
+                <CheckBox fx:id="unitSwitch" text="Mostrar en °F" style="-fx-font-size: 16px; -fx-text-fill: #34495e;"/>
+            </HBox>
+
+            <!-- Botón de evaluar -->
+            <Button text="Evaluar" style="-fx-font-size: 16px; -fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 12 20; -fx-border-radius: 5;" onAction="#calculateFever"/>
+
+            <!-- Contenedor del termómetro -->
+            <StackPane alignment="CENTER">
+                <!-- Rectángulo externo del termómetro (marco) -->
+                <Rectangle fx:id="thermometerBackground" width="40" height="200" arcHeight="10" arcWidth="10" style="-fx-fill: white; -fx-stroke: #bdc3c7; -fx-stroke-width: 3;"/>
+
+                <!-- Rectángulo interno que indica el nivel de temperatura -->
+                <Rectangle fx:id="thermometerFill" width="40" height="0" arcHeight="10" arcWidth="10" style="-fx-fill: #ecf0f1;"/>
+            </StackPane>
+
+            <!-- Consejos de temperatura -->
+            <Label fx:id="resultAlert" style="-fx-font-size: 20px; -fx-text-fill: #34495e; -fx-wrap-text: true; -fx-text-alignment: center;" wrapText="true"/>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SLD360 - Salud Integral</title>
+  <meta name="title" content="SLD360 - Salud Integral">
+  <meta name="description" content="Centro médico especializado en salud reproductiva, pediatría y geriatría">
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Rubik:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="preload" as="image" href="img/hero-banner.png">
+  <link rel="preload" as="image" href="img/hero-bg.png">
+  <style>
+    /* Estilos para el nuevo menú de navegación */
+    .secondary-nav {
+      background-color: #00bcd4;
+      /* Azul cyan */
+      padding: 12px 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .secondary-nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .secondary-nav-list {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .secondary-nav-item {
+      margin: 0 10px;
+    }
+
+    .secondary-nav-link {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .secondary-nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .secondary-nav-container {
+        justify-content: flex-start;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      .secondary-nav-list {
+        display: inline-flex;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+  <div class="preloader" data-preloader>
+    <div class="circle"></div>
+  </div>
+  <header class="header" data-header>
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="img/logo-sld.png" width="50" height="46" alt="SLD360 home">
+      </a>
+      <nav class="navbar" data-navbar>
+        <div class="navbar-top">
+          <a href="#" class="logo">
+            <img src="img/logo-sld.png" width="30" height="46" alt="SLD360 home">
+          </a>
+          <button class="nav-close-btn" aria-label="clsoe menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a href="#" class="navbar-link title-md">Inicio</a>
+          </li>
+          <li class="navbar-item">
+            <a href="portal/pages/bot/index.html" class="navbar-link title-md">Asistente Médico Virtual</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#" class="navbar-link title-md">Llamar a emergencias</a>
+          </li>
+        </ul>
+        <ul class="social-list">
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-pinterest"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+      <a href="portal/index.html" class="btn has-before title-md">Portal</a>
+    </div>
+  </header>
+  <main>
+    <article>
+      <section class="section hero" style="background-image: url('img/hero-bg.png')" aria-label="home">
+        <div class="container">
+          <div class="hero-content">
+            <p class="hero-subtitle has-before" data-reveal="left">Bienvenido a SLD360</p>
+            <h1 class="headline-lg hero-title" data-reveal="left">
+              La Salud <br>
+              Al Alcance de tus Manos.
+            </h1>
+          </div>
+          <figure class="hero-banner" data-reveal="right">
+            <img src="img/hero-banner.png" width="590" height="517" loading="eager" alt="hero banner" class="w-100">
+          </figure>
+        </div>
+      </section>
+      <section class="service" aria-label="service">
+        <div class="container">
+          <ul class="service-list"
+            style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; justify-items: center;">
+            <li>
+              <div class="service-card" data-reveal="bottom" style="max-width: 300px;">
+                <div class="card-icon">
+                  <img src="img/icon-1.png" width="71" height="71" loading="lazy" alt="Maternidad">
+                </div>
+                <h3 class="headline-sm card-title">
+                  <a href="pages/maternidad.html">Maternidad</a>
+                </h3>
+                <p class="card-text">
+                  Cuidado prenatal, parto y postparto para una maternidad saludable
+                </p>
+                <button class="btn-circle" aria-label="Más información sobre Maternidad"
+                  onclick="window.location.href='pages/maternidad.html'">
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </button>
+              </div>
+            </li>
+            <li>
+              <div class="service-card" data-reveal="bottom" style="max-width: 300px;">
+                <div class="card-icon">
+                  <img src="img/icon-3.png" width="71" height="71" loading="lazy" alt="Niños y Adolescentes">
+                </div>
+                <h3 class="headline-sm card-title">
+                  <a href="pages/adolescentes.html">Niños y Adolescentes</a>
+                </h3>
+                <p class="card-text">
+                  Atención pediátrica integral y desarrollo saludable
+                </p>
+                <button class="btn-circle" aria-label="Más información sobre Niños y Adolescentes"
+                  onclick="window.location.href='pages/adolescentes.html'">
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </button>
+              </div>
+            </li>
+            <li>
+              <div class="service-card" data-reveal="bottom" style="max-width: 300px;">
+                <div class="card-icon">
+                  <img src="img/icon-4.png" width="71" height="71" loading="lazy" alt="Adultos Mayores">
+                </div>
+                <h3 class="headline-sm card-title">
+                  <a href="pages/adultosmayores.html">Adultos Mayores</a>
+                </h3>
+                <p class="card-text">
+                  Cuidado geriátrico especializado y calidad de vida
+                </p>
+                <button class="btn-circle" aria-label="Más información sobre Adultos Mayores"
+                  onclick="window.location.href='pages/adultosmayores.html'">
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </button>
+              </div>
+            </li>
+            <li>
+              <div class="service-card" data-reveal="bottom" style="max-width: 300px;">
+                <div class="card-icon">
+                  <img src="img/icon-2.png" width="71" height="71" loading="lazy" alt="Discapacidad">
+                </div>
+                <h3 class="headline-sm card-title">
+                  <a href="pages/discapacidad.html">Discapacidad</a>
+                </h3>
+                <p class="card-text">
+                  Apoyo especializado e inclusión para personas con discapacidad
+                </p>
+                <button class="btn-circle" aria-label="Más información sobre Discapacidad"
+                  onclick="window.location.href='pages/discapacidad.html'">
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </button>
+              </div>
+            </li>
+            <li>
+              <div class="service-card" data-reveal="bottom" style="max-width: 300px;">
+                <div class="card-icon">
+                  <img src="img/icon-5.png" width="71" height="71" loading="lazy" alt="Comunidad Rural">
+                </div>
+                <h3 class="headline-sm card-title">
+                  <a href="pages/comunidad-rural.html">Comunidad Rural</a>
+                </h3>
+                <p class="card-text">
+                  Programas de salud accesibles para comunidades rurales
+                </p>
+                <button class="btn-circle" aria-label="Más información sobre Comunidad Rural"
+                  onclick="window.location.href='pages/comunidad-rural.html'">
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </button>
+              </div>
+            </li>
+            <li>
+              <div class="service-card" data-reveal="bottom" style="max-width: 300px;">
+                <div class="card-icon">
+                  <img src="img/icon-6.png" width="71" height="71" loading="lazy" alt="Salud Sexual">
+                </div>
+                <h3 class="headline-sm card-title">
+                  <a href="pages/salud-sexual.html">Salud Sexual</a>
+                </h3>
+                <p class="card-text">
+                  Educación, prevención y atención en salud sexual y reproductiva
+                </p>
+                <button class="btn-circle" aria-label="Más información sobre Salud Sexual"
+                  onclick="window.location.href='pages/salud-sexual.html'">
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="section about" aria-labelledby="about-label">
+        <div class="container">
+          <div class="about-content">
+            <p class="section-subtitle title-lg has-after" id="about-label" data-reveal="left">Sobre Nosotros</p>
+            <h2 class="headline-md" data-reveal="left">Expertos en Cuidado Familiar</h2>
+            <p class="section-text" data-reveal="left">
+              En SLD360 nos especializamos en brindar atención médica integral para todas las etapas de la vida, desde
+              el cuidado prenatal hasta la atención geriátrica.
+            </p>
+            <ul class="tab-list" data-reveal="left">
+              <li>
+                <button class="tab-btn active">Visión</button>
+              </li>
+              <li>
+                <button class="tab-btn">Misión</button>
+              </li>
+              <li>
+                <button class="tab-btn">Valores</button>
+              </li>
+            </ul>
+            <p class="tab-text" data-reveal="left">
+              Nuestro compromiso es ofrecer atención médica de calidad con enfoque en la prevención, educación y
+              tratamiento personalizado para cada miembro de la familia.
+            </p>
+            <div class="wrapper">
+              <ul class="about-list">
+                <li class="about-item" data-reveal="left">
+                  <ion-icon name="checkmark-circle-outline"></ion-icon>
+                  <span class="span">Consultas prenatales y seguimiento de embarazo</span>
+                </li>
+                <li class="about-item" data-reveal="left">
+                  <ion-icon name="checkmark-circle-outline"></ion-icon>
+                  <span class="span">Asesoramiento en métodos anticonceptivos</span>
+                </li>
+                <li class="about-item" data-reveal="left">
+                  <ion-icon name="checkmark-circle-outline"></ion-icon>
+                  <span class="span">Control de crecimiento y desarrollo infantil</span>
+                </li>
+                <li class="about-item" data-reveal="left">
+                  <ion-icon name="checkmark-circle-outline"></ion-icon>
+                  <span class="span">Programas de salud para adultos mayores</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <figure class="about-banner" data-reveal="right">
+            <img src="img/about-banner.png" width="554" height="678" loading="lazy" alt="about banner" class="w-100">
+          </figure>
+        </div>
+      </section>
+      <section class="section listing" aria-labelledby="listing-label">
+        <div class="container">
+          <ul class="grid-list">
+            <li>
+              <p class="section-subtitle title-lg" id="listing-label" data-reveal="left">Nuestros Especialistas</p>
+              <h2 class="headline-md" data-reveal="left">Áreas de Especialización</h2>
+            </li>
+            <li>
+              <div class="listing-card" data-reveal="bottom">
+                <div class="card-icon">
+                  <img src="img/icon-1.png" width="71" height="71" loading="lazy" alt="icon">
+                </div>
+                <div>
+                  <h3 class="headline-sm card-title">Ginecología y Obstetricia</h3>
+                  <p class="card-text">Dra. María Fernández</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="listing-card" data-reveal="bottom">
+                <div class="card-icon">
+                  <img src="img/icon-2.png" width="71" height="71" loading="lazy" alt="icon">
+                </div>
+                <div>
+                  <h3 class="headline-sm card-title">Planificación Familiar</h3>
+                  <p class="card-text">Dr. Carlos Mendoza</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="listing-card" data-reveal="bottom">
+                <div class="card-icon">
+                  <img src="img/icon-4.png" width="71" height="71" loading="lazy" alt="icon">
+                </div>
+                <div>
+                  <h3 class="headline-sm card-title">Pediatría</h3>
+                  <p class="card-text">Dra. Laura González</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="listing-card" data-reveal="bottom">
+                <div class="card-icon">
+                  <img src="img/icon-5.png" width="71" height="71" loading="lazy" alt="icon">
+                </div>
+                <div>
+                  <h3 class="headline-sm card-title">Geriatría</h3>
+                  <p class="card-text">Dr. Jorge Ramírez</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="listing-card" data-reveal="bottom">
+                <div class="card-icon">
+                  <img src="img/icon-6.png" width="71" height="71" loading="lazy" alt="icon">
+                </div>
+                <div>
+                  <h3 class="headline-sm card-title">Psicología Perinatal</h3>
+                  <p class="card-text">Lic. Ana Torres</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="listing-card" data-reveal="bottom">
+                <div class="card-icon">
+                  <img src="img/icon-7.png" width="71" height="71" loading="lazy" alt="icon">
+                </div>
+                <div>
+                  <h3 class="headline-sm card-title">Nutrición Infantil</h3>
+                  <p class="card-text">Dr. Diego Pérez</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="section blog" aria-labelledby="blog-label">
+        <div class="container">
+          <p class="section-subtitle title-lg text-center" id="blog-label" data-reveal="bottom">
+            Noticias y Artículos
+          </p>
+          <h2 class="section-title headline-md text-center" data-reveal="bottom">Últimas Publicaciones</h2>
+          <ul class="grid-list">
+            <li>
+              <div class="blog-card has-before has-after" data-reveal="bottom">
+                <div class="meta-wrapper">
+                  <div class="card-meta">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <span class="span">Por SLD360</span>
+                  </div>
+                  <div class="card-meta">
+                    <ion-icon name="folder-outline"></ion-icon>
+                    <span class="span">Embarazo</span>
+                  </div>
+                </div>
+                <h3 class="headline-sm card-title">Cuidados esenciales durante el primer trimestre de embarazo</h3>
+                <time class="title-sm date" datetime="2023-06-15">15 Junio, 2023</time>
+                <p class="card-text">
+                  Conoce los cuidados básicos, alimentación recomendada y señales de alerta durante los primeros meses
+                  de gestación para un embarazo saludable.
+                </p>
+                <a href="pages/embarazo.html" class="btn-text title-lg">Leer Más</a>
+              </div>
+            </li>
+            <li>
+              <div class="blog-card has-before has-after" data-reveal="bottom">
+                <div class="meta-wrapper">
+                  <div class="card-meta">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <span class="span">Por SLD360</span>
+                  </div>
+                  <div class="card-meta">
+                    <ion-icon name="folder-outline"></ion-icon>
+                    <span class="span">Adultos Mayores</span>
+                  </div>
+                </div>
+                <h3 class="headline-sm card-title">Ejercicios recomendados para mantener la movilidad después de los 60
+                </h3>
+                <time class="title-sm date" datetime="2023-06-10">10 Junio, 2023</time>
+                <p class="card-text">
+                  Rutinas sencillas y seguras para mejorar la flexibilidad, fuerza y equilibrio en la tercera edad,
+                  adaptables a diferentes condiciones físicas.
+                </p>
+                <a href="#" class="btn-text title-lg">Leer Más</a>
+              </div>
+            </li>
+            <li>
+              <div class="blog-card has-before has-after" data-reveal="bottom">
+                <div class="meta-wrapper">
+                  <div class="card-meta">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <span class="span">Por SLD360</span>
+                  </div>
+                  <div class="card-meta">
+                    <ion-icon name="folder-outline"></ion-icon>
+                    <span class="span">Métodos Anticonceptivos</span>
+                  </div>
+                </div>
+                <h3 class="headline-sm card-title">Métodos anticonceptivos: mitos y realidades</h3>
+                <time class="title-sm date" datetime="2023-06-05">5 Junio, 2023</time>
+                <p class="card-text">
+                  Analizamos los métodos más efectivos, sus ventajas, posibles efectos secundarios y desmentimos los
+                  mitos más comunes sobre anticoncepción.
+                </p>
+                <a href="#" class="btn-text title-lg">Leer Más</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </article>
+  </main>
+  <footer class="footer" style="background-image: url('img/footer-bg.png')">
+    <div class="container">
+      <div class="section footer-top">
+        <div class="footer-brand" data-reveal="bottom">
+          <a href="#" class="logo">
+            <img src="img/logo-sld.png" width="136" height="46" loading="lazy" alt="SLD360 home">
+          </a>
+          <ul class="contact-list has-after">
+            <li class="contact-item">
+              <div class="item-icon">
+                <ion-icon name="mail-open-outline"></ion-icon>
+              </div>
+              <div>
+                <p>
+                  Correo principal : <a href="mailto:contacto@sld360.com"
+                    class="contact-link">contacto@&shy;sld360.com</a>
+                </p>
+                <p>
+                  Consultas : <a href="mailto:info@sld360.com" class="contact-link">info@sld360.com</a>
+                </p>
+              </div>
+            </li>
+            <li class="contact-item">
+              <div class="item-icon">
+                <ion-icon name="call-outline"></ion-icon>
+              </div>
+              <div>
+                <p>
+                  Teléfono : <a href="tel:+528126132158" class="contact-link">52 8126 132158</a>
+                </p>
+                <p>
+                  Urgencias : <a href="tel:+911" class="contact-link">911</a>
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-list" data-reveal="bottom">
+          <p class="headline-sm footer-list-title">Sobre Nosotros</p>
+          <p class="text">
+            Equipo de profesionales comprometidos con la sociedad y los derechos de las personas.
+          </p>
+          <address class="address">
+            <ion-icon name="map-outline"></ion-icon>
+            <span class="text">
+              León, Guanajuato, México
+          </address>
+        </div>
+        <ul class="footer-list" data-reveal="bottom">
+          <li>
+            <p class="headline-sm footer-list-title">Servicios</p>
+          </li>
+          <li>
+            <a href="pages/maternidad.html" class="text footer-link">Maternidad</a>
+          </li>
+          <li>
+            <a href="pages/adolescentes.html" class="text footer-link">Niños y Adolescentes</a>
+          </li>
+          <li>
+            <a href="pages/adultosmayores.html" class="text footer-link">Adultos Mayores</a>
+          </li>
+          <li>
+            <a href="pages/discapacidad.html" class="text footer-link">Discapacidad</a>
+          </li>
+          <li>
+            <a href="pages/comunidad-rural.html" class="text footer-link">Comunidad Rural</a>
+          </li>
+          <li>
+            <a href="pages/salud-sexual.html" class="text footer-link">Salud Sexual</a>
+          </li>
+        </ul>
+        <ul class="footer-list" data-reveal="bottom">
+          <li>
+            <p class="headline-sm footer-list-title">Enlaces Útiles</p>
+          </li>
+          <li>
+            <a href="#" class="text footer-link">Preguntas Frecuentes</a>
+          </li>
+          <li>
+            <a href="#" class="text footer-link">Términos y Condiciones</a>
+          </li>
+          <li>
+            <a href="#" class="text footer-link">Política de Privacidad</a>
+          </li>
+          <li>
+            <a href="#" class="text footer-link">Únete a Nuestro Equipo</a>
+          </li>
+          <li>
+            <a href="#" class="text footer-link">Blog de Salud</a>
+          </li>
+          <li>
+            <a href="#" class="text footer-link">Directorio Médico</a>
+          </li>
+        </ul>
+        <div class="footer-list" data-reveal="bottom">
+          <p class="headline-sm footer-list-title">Suscríbete</p>
+          <form action="" class="footer-form">
+            <input type="email" name="email" placeholder="Correo electrónico" class="input-field title-lg">
+            <button type="submit" class="btn has-before title-md">Suscribir</button>
+          </form>
+          <p class="text">
+            Recibe nuestras últimas noticias y artículos sobre salud familiar.
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="text copyright">
+          &copy; SLD360 2025 | Todos los derechos reservados
+        </p>
+        <ul class="social-list">
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/@NacionesUnidasVideo" class="social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up"></ion-icon>
+  </a>
+  <script src="js/index.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/18"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.asd360.SLD360.ComunidadRural.EducacionSanitariaController"
+            style="-fx-background-color: #f8f9fa;">
+
+    <top>
+        <Label text="📚 Educación Sanitaria - Atención Médica Remota"
+               style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #007bff; -fx-padding: 10 0; -fx-alignment: center;" />
+    </top>
+
+    <center>
+        <VBox spacing="20" style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 10; -fx-padding: 30;">
+            <Label text="La educación sanitaria es clave para mantener la salud. Aquí encontrarás opciones de atención médica a distancia, acceso a telemedicina y recursos para tu bienestar."
+                   style="-fx-font-size: 16px; -fx-text-fill: #333333; -fx-wrap-text: true;" />
+
+            <VBox spacing="15">
+                <Label text="📌 Acceso a Telemedicina"
+                       style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #007bff;" />
+                <Label text="Conéctate con médicos bilingües mediante las siguientes opciones:"
+                       style="-fx-font-size: 16px; -fx-text-fill: #333333; -fx-wrap-text: true;" />
+
+                <HBox spacing="15" style="-fx-alignment: center;">
+                    <Label text="Llamada telefónica:"
+                           style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333333;" />
+                    <Button text="Llamar ahora" onAction="#hacerLlamada"
+                            style="-fx-font-size: 16px; -fx-background-color: #007bff; -fx-text-fill: white; -fx-font-weight: bold;" />
+                </HBox>
+                <HBox spacing="15" style="-fx-alignment: center;">
+                    <Label text="Chat en línea:"
+                           style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333333;" />
+                    <Button text="Abrir WhatsApp" onAction="#abrirWhatsApp"
+                            style="-fx-font-size: 16px; -fx-background-color: #25d366; -fx-text-fill: white; -fx-font-weight: bold;" />
+                </HBox>
+            </VBox>
+
+            <VBox spacing="15">
+                <Label text="📞 Videollamada con Médico"
+                       style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #007bff;" />
+                <Label text="Activa tu cámara para iniciar una videollamada con un médico especialista."
+                       style="-fx-font-size: 16px; -fx-text-fill: #333333; -fx-wrap-text: true;" />
+                <Button fx:id="toggleCameraButton" text="Encender Cámara" onAction="#toggleCamara"
+                        style="-fx-font-size: 16px; -fx-background-color: #007bff; -fx-text-fill: white; -fx-font-weight: bold;" />
+                <ImageView fx:id="videoStream" fitWidth="600" fitHeight="400" style="-fx-border-radius: 10;" />
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

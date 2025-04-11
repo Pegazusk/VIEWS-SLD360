@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/18"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.asd360.SLD360.IndexController"
+            style="-fx-background-color: #ecf0f1; -fx-padding: 30px;">
+
+    <center>
+        <!-- Contenedor principal con fondo blanco y bordes suaves -->
+        <VBox spacing="20" style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 15; -fx-padding: 30; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 5);">
+            <!-- Título principal -->
+            <Label text="Crisis de Ansiedad" style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-padding: 0 0 20 0;" />
+
+            <!-- Descripción general sobre la crisis de ansiedad -->
+            <Label text="Si una persona está experimentando una crisis de ansiedad, lo primero es mantener la calma y asegurarse de que la persona esté a salvo. Aquí tienes algunos pasos para manejar la situación:"
+                   style="-fx-font-size: 18px; -fx-text-fill: #7f8c8d; -fx-wrap-text: true; -fx-padding: 0 0 20 0;" />
+
+            <!-- Instrucciones numeradas con mayor tamaño de texto -->
+            <VBox spacing="15" style="-fx-padding: 0 0 20 0;">
+                <Label text="1. Mantén la calma: Habla de forma tranquila y no te pongas ansioso." style="-fx-font-size: 16px; -fx-text-fill: #34495e;" />
+                <Label text="2. Respira profundamente: Ayuda a la persona a respirar profundamente. Pide que inhale por la nariz y exhale por la boca." style="-fx-font-size: 16px; -fx-text-fill: #34495e;" />
+                <Label text="3. Ofrece apoyo: Asegúrate de que la persona sepa que está a salvo y que todo pasará." style="-fx-font-size: 16px; -fx-text-fill: #34495e;" />
+                <Label text="4. Distracción: Ayuda a distraer a la persona con algo simple, como mirar algo fuera de lo común o hablar de algo relajante." style="-fx-font-size: 16px; -fx-text-fill: #34495e;" />
+                <Label text="5. Evita tocar sin previo aviso: Pregunta antes de tocar a la persona si es necesario. Algunas personas necesitan espacio." style="-fx-font-size: 16px; -fx-text-fill: #34495e;" />
+                <Label text="6. Reitera que es temporal: Explícale que la crisis pasará y que puede superar este momento." style="-fx-font-size: 16px; -fx-text-fill: #34495e;" />
+                <Label text="7. Contacta a un profesional: Si la crisis de ansiedad persiste o es recurrente, busca ayuda profesional. Llama a un terapeuta o médico." style="-fx-font-size: 16px; -fx-text-fill: #34495e;" />
+            </VBox>
+
+            <!-- Botón para llamada a emergencias -->
+            <Button text="Llamada a Emergencias" onAction="#handleEmergencyCall"
+                    style="-fx-font-size: 16px; -fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 15 25; -fx-border-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 5);" />
+        </VBox>
+    </center>
+</BorderPane>

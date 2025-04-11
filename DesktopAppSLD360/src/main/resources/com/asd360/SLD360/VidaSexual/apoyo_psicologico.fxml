@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.web.WebView?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asd360.SLD360.VidaSexual.ApoyoPsicologicoController"
+            style="-fx-background-color: #f0f0f0;">
+
+    <center>
+        <VBox spacing="20" style="-fx-background-color: white; -fx-border-color: #007bff; -fx-border-radius: 10; -fx-padding: 40; -fx-alignment: center; -fx-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <Label text="Agendar Cita con Especialista" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #007bff; -fx-text-alignment: center; -fx-padding: 20;"/>
+
+            <GridPane hgap="20" vgap="20" style="-fx-font-size: 16px;">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" />
+                    <ColumnConstraints hgrow="ALWAYS" />
+                </columnConstraints>
+
+                <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-text-fill: #333333;" />
+                <TextField fx:id="nombreField" GridPane.rowIndex="0" GridPane.columnIndex="1" style="-fx-font-size: 16px; -fx-background-color: #f9f9f9; -fx-border-color: #007bff; -fx-border-radius: 5px; -fx-padding: 10;" />
+
+                <Label text="Correo Electrónico:" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-text-fill: #333333;" />
+                <TextField fx:id="correoField" GridPane.rowIndex="1" GridPane.columnIndex="1" style="-fx-font-size: 16px; -fx-background-color: #f9f9f9; -fx-border-color: #007bff; -fx-border-radius: 5px; -fx-padding: 10;" />
+
+                <Label text="Teléfono:" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-text-fill: #333333;" />
+                <TextField fx:id="telefonoField" GridPane.rowIndex="2" GridPane.columnIndex="1" style="-fx-font-size: 16px; -fx-background-color: #f9f9f9; -fx-border-color: #007bff; -fx-border-radius: 5px; -fx-padding: 10;" />
+
+                <Label text="Fecha:" GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-text-fill: #333333;" />
+                <DatePicker fx:id="fechaPicker" GridPane.rowIndex="3" GridPane.columnIndex="1" style="-fx-font-size: 16px; -fx-background-color: #f9f9f9; -fx-border-color: #007bff; -fx-border-radius: 5px; -fx-padding: 10;" />
+
+                <Label text="Hora:" GridPane.rowIndex="4" GridPane.columnIndex="0" style="-fx-text-fill: #333333;" />
+                <TextField fx:id="horaField" GridPane.rowIndex="4" GridPane.columnIndex="1" style="-fx-font-size: 16px; -fx-background-color: #f9f9f9; -fx-border-color: #007bff; -fx-border-radius: 5px; -fx-padding: 10;" />
+            </GridPane>
+
+            <Button text="Agendar Cita" onAction="#agendarCita" style="-fx-font-size: 16px; -fx-background-color: #007bff; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20; -fx-border-radius: 5px;" />
+            <Label fx:id="mensajeLabel" style="-fx-font-size: 16px; -fx-text-fill: green; -fx-padding: 20;" />
+
+            <WebView fx:id="webView" prefWidth="800" prefHeight="450" style="-fx-border-radius: 10px; -fx-border-color: #007bff; -fx-border-width: 1px;"/>
+        </VBox>
+    </center>
+</BorderPane>

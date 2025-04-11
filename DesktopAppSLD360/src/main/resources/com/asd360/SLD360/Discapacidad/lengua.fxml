@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/18"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.asd360.SLD360.Controller.Discapacidad.Lengua"
+            style="-fx-background-color: #f7f7f7; -fx-padding: 30px;">
+
+    <center>
+        <VBox spacing="20" style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 10; -fx-padding: 30; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 5);">
+            <Label text="Lengua de Señas" style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-padding: 0 0 20 0;" />
+
+            <VBox spacing="15" style="-fx-padding: 20;">
+                <Label text="Contactar al médico por WhatsApp" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #34495e;" />
+                <Label text="Ingresa tu número de teléfono. El mensaje se enviará al médico especialista."
+                       style="-fx-font-size: 16px; -fx-text-fill: #7f8c8d; -fx-wrap-text: true; -fx-padding: 0 0 20 0;" />
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <TextField fx:id="userPhoneField" promptText="Ej: +52 4772299615"
+                               style="-fx-font-size: 16px; -fx-pref-width: 300px; -fx-padding: 12px;"/>
+                    <Button text="Enviar Mensaje" onAction="#handleSendMessage"
+                            style="-fx-font-size: 16px; -fx-background-color: #25D366; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 12 20; -fx-border-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 5;"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane style="-fx-background-color: #f4f4f4; -fx-padding: 20;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asd360.SLD360.Controller.ComunidadRural.AtencionMovilController">
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
+            <VBox spacing="20" style="-fx-background-color: white; -fx-border-color: #ccc; -fx-border-radius: 10; -fx-padding: 30; -fx-background-insets: 10;">
+                <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #0056b3;" text="Síntomas de Deshidratación" />
+
+                <Label style="-fx-font-size: 16px; -fx-text-fill: #333333;" text="La deshidratación es una condición grave que ocurre cuando el cuerpo pierde más líquidos de los que ingiere. Es especialmente peligrosa en comunidades rurales donde el acceso al agua potable puede ser limitado. Reconocer los síntomas a tiempo puede salvar vidas." wrapText="true" />
+
+                <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #007bff;" text="Síntomas comunes:" />
+
+                <VBox spacing="15" style="-fx-padding: 0 0 0 20;">
+                    <Label style="-fx-font-size: 16px; -fx-text-fill: #333333;" text="• Sed intensa." />
+                    <Label style="-fx-font-size: 16px; -fx-text-fill: #333333;" text="• Boca y piel secas." />
+                    <Label style="-fx-font-size: 16px; -fx-text-fill: #333333;" text="• Orina oscura o en poca cantidad." />
+                    <Label style="-fx-font-size: 16px; -fx-text-fill: #333333;" text="• Fatiga o debilidad." />
+                    <Label style="-fx-font-size: 16px; -fx-text-fill: #333333;" text="• Mareos o confusión." />
+                    <Label style="-fx-font-size: 16px; -fx-text-fill: #333333;" text="• Latidos cardíacos rápidos." />
+                </VBox>
+
+                <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #007bff;" text="Guías en lenguas originarias:" />
+
+                <Label style="-fx-font-size: 16px; -fx-text-fill: #333333;" text="Para ayudar a las comunidades rurales, hemos preparado guías en lenguas originarias sobre cómo reconocer y prevenir la deshidratación. Descarga las guías en tu lengua:" wrapText="true" />
+
+                <HBox alignment="CENTER" spacing="15">
+                    <Button onAction="#descargarNahuatl" style="-fx-font-size: 16px; -fx-background-color: #007bff; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20;" text="Guía en Náhuatl" />
+                    <Button onAction="#descargarMaya" style="-fx-font-size: 16px; -fx-background-color: #007bff; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20;" text="Guía en Maya" />
+                    <Button onAction="#descargarZapoteco" style="-fx-font-size: 16px; -fx-background-color: #007bff; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20;" text="Guía en Zapoteco" />
+                    <Button onAction="#descargarMixteco" style="-fx-font-size: 16px; -fx-background-color: #007bff; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20;" text="Guía en Mixteco" />
+   
+                            <Button onAction="#descargarTodasLasGuias" style="-fx-font-size: 16px; -fx-background-color: #28a745; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 12 25;" text="Descargar todas las guías (ZIP)" />
+                </HBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

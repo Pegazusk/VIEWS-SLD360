@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asd360.SLD360.Adolescentes.Vacunacion" style="-fx-background-color: #f4f6f9; -fx-padding: 20px;">
+    <top>
+        <HBox alignment="CENTER" spacing="20" style="-fx-background-color: #343a40; -fx-padding: 15px;">
+            <Label text="Vacunación Infantil" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="25" style="-fx-background-color: #ffffff; -fx-border-radius: 12px; -fx-padding: 25px; -fx-effect: dropshadow(gaussian, #000, 10, 0, 5, 5);">
+            <Label text="Importancia de la Vacunación" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #333333;"/>
+
+            <HBox spacing="50" alignment="CENTER">
+                <VBox spacing="20" style="-fx-padding: 10px;">
+                    <Text style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-fill: #495057;" text="Protección contra enfermedades graves"/>
+                    <Text style="-fx-font-size: 14px; -fx-fill: #6c757d;" text="Las vacunas previenen más de 20 enfermedades potencialmente mortales"/>
+                </VBox>
+                <VBox spacing="20" style="-fx-padding: 10px;">
+                    <Text style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-fill: #495057;" text="Inmunidad colectiva"/>
+                    <Text style="-fx-font-size: 14px; -fx-fill: #6c757d;" text="Protege a quienes no pueden vacunarse mediante la inmunidad de grupo"/>
+                </VBox>
+            </HBox>
+
+            <VBox spacing="25">
+                <Text style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-fill: #495057;" text="Edad del niño(a) en meses:"/>
+
+                <HBox spacing="20" alignment="CENTER">
+                    <TextField fx:id="edadField" promptText="Edad en meses" style="-fx-font-size: 14px; -fx-background-color: #f8f9fa; -fx-border-color: #dee2e6; -fx-border-radius: 8px; -fx-padding: 10px;"/>
+                    <Button onAction="#calcularVacunas" text="Calcular" style="-fx-font-size: 14px; -fx-background-color: #28a745; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-radius: 8px; -fx-padding: 12px 18px;"/>
+                </HBox>
+
+                <ScrollPane fitToWidth="true" prefHeight="400" style="-fx-background-color: #f8f9fa; -fx-border-color: #dee2e6; -fx-border-radius: 8px; -fx-padding: 15px;">
+                    <VBox fx:id="vacunasList" spacing="20" style="-fx-padding: 15px;">
+                        <!-- Lista de vacunas -->
+                    </VBox>
+                </ScrollPane>
+            </VBox>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" spacing="20" style="-fx-background-color: #e9ecef; -fx-padding: 25px;">
+            <Button onAction="#irCentroVacunacion" text="Ir al Centro de Vacunación" style="-fx-font-size: 14px; -fx-background-color: #007bff; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-radius: 8px; -fx-padding: 12px 25px;"/>
+        </HBox>
+    </bottom>
+
+    <WebView fx:id="mapWebView" visible="false" />
+    <StackPane fx:id="vacunaModal" style="-fx-background-color: rgba(0, 0, 0, 0.5); -fx-padding: 20px;" visible="false">
+        <VBox spacing="25" style="-fx-background-color: white; -fx-border-radius: 12px; -fx-padding: 25px; -fx-effect: dropshadow(gaussian, #333, 10, 0, 0, 5);">
+            <Text fx:id="vacunaTitle" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #343a40;"/>
+            <Text fx:id="vacunaDesc" style="-fx-font-size: 16px; -fx-text-fill: #495057;"/>
+            <Text style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #343a40;" text="Previene:"/>
+            <ListView fx:id="vacunaPreviene" style="-fx-background-color: #f8f9fa; -fx-border-color: #dee2e6; -fx-padding: 10px;"/>
+            <Text style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #343a40;" text="Riesgos:"/>
+            <ListView fx:id="vacunaRiesgos" style="-fx-background-color: #f8f9fa; -fx-border-color: #dee2e6; -fx-padding: 10px;"/>
+            <Button text="Cerrar" onAction="#cerrarModal" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-radius: 8px; -fx-padding: 12px 25px;"/>
+        </VBox>
+    </StackPane>
+</BorderPane>

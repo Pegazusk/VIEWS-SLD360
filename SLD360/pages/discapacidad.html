@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discapacidad | SLD360 - Salud Integral</title>
+  <meta name="title" content="Discapacidad | SLD360 - Salud Integral">
+  <meta name="description" content="Apoyo especializado para personas con discapacidad y sus cuidadores">
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Rubik:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="preload" as="image" href="../img/discapacidad-banner.jpg">
+  <link rel="preload" as="image" href="../img/hero-bg.png">
+  <style>
+    /* Estilos específicos para discapacidad */
+    .emergency-grid,
+    .resource-container,
+    .specialist-selection {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .emergency-card,
+    .resource-card,
+    .specialist-card {
+      flex: 1;
+      min-width: 300px;
+      max-width: 400px;
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .emergency-card:hover,
+    .resource-card:hover,
+    .specialist-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .emergency-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: var(--viridian-green);
+    }
+
+    .resource-container {
+      align-items: flex-start;
+    }
+
+    .resource-form,
+    .resource-list {
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    #add-resource {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .resource-list h3 {
+      margin-bottom: 20px;
+      color: var(--viridian-green);
+    }
+
+    .resource-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .resource-item:last-child {
+      border-bottom: none;
+    }
+
+    .resource-info h4 {
+      margin: 0 0 5px 0;
+      color: var(--space-cadet);
+    }
+
+    .resource-info p {
+      margin: 5px 0;
+      font-size: 0.9rem;
+    }
+
+    .resource-info small {
+      color: #777;
+      font-size: 0.8rem;
+    }
+
+    .delete-btn {
+      background: none;
+      border: none;
+      color: #ff6b6b;
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 5px;
+    }
+
+    .empty-state {
+      text-align: center;
+      color: #777;
+      padding: 20px 0;
+    }
+
+    .specialist-card {
+      text-align: center;
+      padding: 30px;
+    }
+
+    .specialist-card h3 {
+      color: var(--viridian-green);
+      margin-bottom: 10px;
+    }
+
+    .specialist-card p {
+      margin: 5px 0;
+    }
+
+    .disability-type {
+      background-color: #f8f9fa;
+      padding: 40px 0;
+    }
+
+    /* Estilo para alinear los tipos de discapacidad en una sola línea */
+    .disability-grid {
+      display: flex;
+      justify-content: space-between; /* Espacio uniforme entre los elementos */
+      align-items: stretch; /* Asegura que todos los elementos tengan la misma altura */
+      gap: 20px; /* Espaciado entre los elementos */
+      overflow-x: auto; /* Permite desplazamiento horizontal si no caben en la pantalla */
+      padding: 10px;
+    }
+
+    .disability-item {
+      flex: 0 0 250px; /* Ancho fijo para cada tarjeta */
+      height: auto; /* Altura automática para adaptarse al contenido */
+      background: white;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; /* Alinea el contenido al inicio */
+    }
+
+    .disability-icon {
+      font-size: 2.5rem;
+      color: var(--viridian-green);
+      margin-bottom: 15px;
+    }
+
+    .disability-item h3 {
+      font-size: 1.2rem;
+      color: var(--blue-ryb);
+      margin-bottom: 10px;
+    }
+
+    .disability-item p {
+      font-size: 0.9rem;
+      color: var(--sonic-silver);
+      line-height: 1.4;
+    }
+
+    /* Estilo para las imágenes de discapacidad */
+    .disability-image {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .crisis-plan {
+      background-color: var(--alice-blue);
+      padding: 25px;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+
+      .emergency-grid,
+      .resource-container,
+      .specialist-selection,
+      .disability-grid {
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        align-items: center;
+      }
+
+      .emergency-card,
+      .resource-card,
+      .specialist-card,
+      .disability-item,
+      .resource-form,
+      .resource-list {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+  <div class="preloader" data-preloader>
+    <div class="circle"></div>
+  </div>
+
+  <header class="header" data-header>
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <img src="../img/logo-sld.png" width="50" height="46" alt="SLD360 home">
+      </a>
+      <nav class="navbar" data-navbar>
+        <div class="navbar-top">
+          <a href="../index.html" class="logo">
+            <img src="../img/qafya-logo.png" width="50" height="46" alt="SLD360 home">
+          </a>
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a href="#types" class="navbar-link title-md">Tipos de Discapacidad</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#emergency" class="navbar-link title-md">Primeros Auxilios</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#services" class="navbar-link title-md">Servicios</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#specialists" class="navbar-link title-md">Especialistas</a>
+          </li>
+        </ul>
+        <ul class="social-list">
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+      <a href="../portal/index.html" class="btn has-before title-md">Portal</a>
+    </div>
+  </header>
+  <main>
+    <article>
+      <section class="section hero" style="background-image: url('../img/hero-bg.png')" aria-label="discapacidad">
+        <div class="container">
+          <div class="hero-content">
+            <p class="hero-subtitle has-before" data-reveal="left">Apoyo Especializado</p>
+            <h1 class="headline-lg hero-title" data-reveal="left">
+              Inclusión y Bienestar <br>
+              para Personas con Discapacidad
+            </h1>
+          </div>
+          <figure class="hero-banner" data-reveal="right">
+            <div class="image-container">
+              <img src="../img/discapacidad.jpg" width="590" height="517" loading="eager" alt="discapacidad"
+                class="w-100 rounded-image">
+            </div>
+          </figure>
+        </div>
+      </section>
+      <section class="section disability-type" id="types" aria-labelledby="types-label">
+        <div class="container">
+          <p class="section-subtitle title-lg text-center" id="types-label" data-reveal="bottom">
+            Comprensión y Apoyo
+          </p>
+          <h2 class="section-title headline-md text-center" data-reveal="bottom">Tipos de Discapacidad</h2>
+
+          <div class="disability-grid">
+            <!-- Física/Motora -->
+            <div class="disability-item" data-reveal="bottom">
+              <img src="https://th.bing.com/th/id/OIP.o_zrFgx7igcAoVGV1NdnSwAAAA?rs=1&pid=ImgDetMain" alt="Discapacidad Física" class="disability-image">
+              <div class="disability-icon">
+                <ion-icon name="accessibility-outline"></ion-icon>
+              </div>
+              <h3>Física/Motora</h3>
+              <p>Dificultades en la movilidad o coordinación motora. Incluye parálisis cerebral, lesión medular, amputaciones.</p>
+            </div>
+
+            <!-- Auditiva -->
+            <div class="disability-item" data-reveal="bottom">
+              <img src="https://consultorsalud.com/wp-content/uploads/2021/03/1-de-cada-5-personas-presentara-problemas-auditivos-en-2050.jpg" alt="Discapacidad Auditiva" class="disability-image">
+              <div class="disability-icon">
+                <ion-icon name="ear-outline"></ion-icon>
+              </div>
+              <h3>Auditiva</h3>
+              <p>Pérdida total o parcial de la audición. Incluye sordera congénita o adquirida.</p>
+            </div>
+
+            <!-- Visual -->
+            <div class="disability-item" data-reveal="bottom">
+              <img src="https://st4.depositphotos.com/5545846/24516/v/450/depositphotos_245167052-stock-illustration-blind-boy-being-guided-seeing.jpg" alt="Discapacidad Visual" class="disability-image">
+              <div class="disability-icon">
+                <ion-icon name="eye-outline"></ion-icon>
+              </div>
+              <h3>Visual</h3>
+              <p>Pérdida total o parcial de la visión. Incluye ceguera y baja visión.</p>
+            </div>
+
+            <!-- Intelectual -->
+            <div class="disability-item" data-reveal="bottom">
+              <img src="https://cdn.euroinnova.edu.es/img/subidasEditor/educaci%C3%B3n%20especial-1618917603.webp" alt="Discapacidad Intelectual" class="disability-image">
+              <div class="disability-icon">
+                <ion-icon name="brain-outline"></ion-icon>
+              </div>
+              <h3>Intelectual</h3>
+              <p>Limitaciones en el funcionamiento intelectual y conducta adaptativa. Incluye síndrome de Down, autismo.</p>
+            </div>
+
+            <!-- Psicosocial -->
+            <div class="disability-item" data-reveal="bottom">
+              <img src="https://entrale.org.mx/blog/wp-content/uploads/2021/04/Captura-de-Pantalla-2021-04-13-a-las-11.29.05.png" alt="Discapacidad Psicosocial" class="disability-image">
+              <div class="disability-icon">
+                <ion-icon name="heart-circle-outline"></ion-icon>
+              </div>
+              <h3>Psicosocial</h3>
+              <p>Condiciones de salud mental que afectan el funcionamiento diario. Incluye depresión mayor, esquizofrenia.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section emergency" id="emergency" aria-labelledby="emergency-label">
+        <div class="container">
+          <p class="section-subtitle title-lg text-center" id="emergency-label" data-reveal="bottom">
+            Manejo de Crisis
+          </p>
+          <h2 class="section-title headline-md text-center" data-reveal="bottom">Primeros Auxilios Psicológicos</h2>
+
+          <div class="emergency-grid">
+            <div class="emergency-card" data-reveal="bottom">
+              <div class="emergency-icon">
+                <ion-icon name="heart-outline"></ion-icon>
+              </div>
+              <h3>Crisis de Ansiedad</h3>
+              <ul>
+                <li>Mantener la calma y hablar con voz tranquila</li>
+                <li>Guiar en ejercicios de respiración</li>
+                <li>Reducir estímulos ambientales</li>
+                <li>Validar sus emociones sin juzgar</li>
+              </ul>
+            </div>
+
+            <div class="emergency-card" data-reveal="bottom">
+              <div class="emergency-icon">
+                <ion-icon name="alert-circle-outline"></ion-icon>
+              </div>
+              <h3>Conductas Autolesivas</h3>
+              <ul>
+                <li>Priorizar seguridad física inmediata</li>
+                <li>No confrontar ni criticar</li>
+                <li>Ofrecer alternativas sensoriales</li>
+                <li>Buscar ayuda profesional</li>
+              </ul>
+            </div>
+
+            <div class="emergency-card" data-reveal="bottom">
+              <div class="emergency-icon">
+                <ion-icon name="people-outline"></ion-icon>
+              </div>
+              <h3>Apoyo al Cuidador</h3>
+              <ul>
+                <li>Establecer rutinas predecibles</li>
+                <li>Practicar autocuidado</li>
+                <li>Buscar redes de apoyo</li>
+                <li>Reconocer señales de burnout</li>
+              </ul>
+            </div>
+          </div>
+          <section class="section service" id="services" aria-labelledby="services-label">
+            <div class="container">
+              <p class="section-subtitle title-lg text-center" id="services-label" data-reveal="bottom">
+                Nuestros Servicios
+              </p>
+              <h2 class="section-title headline-md text-center" data-reveal="bottom">Apoyo Especializado</h2>
+
+              <ul class="service-list">
+                <li>
+                  <div class="service-card" data-reveal="bottom">
+                    <div class="card-icon">
+                    </div>
+                    <h3 class="headline-sm card-title">Evaluación Integral</h3>
+                    <p class="card-text">
+                      Diagnóstico y plan de intervención personalizado
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="service-card" data-reveal="bottom">
+                    <div class="card-icon">
+                    </div>
+                    <h3 class="headline-sm card-title">Terapias Especializadas</h3>
+                    <p class="card-text">
+                      Fisioterapia, terapia ocupacional y del lenguaje
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="service-card" data-reveal="bottom">
+                    <div class="card-icon">
+                    </div>
+                    <h3 class="headline-sm card-title">Apoyo Psicológico</h3>
+                    <p class="card-text">
+                      Individual y familiar para el manejo emocional
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="service-card" data-reveal="bottom">
+                    <div class="card-icon">
+                    </div>
+                    <h3 class="headline-sm card-title">Talleres Educativos</h3>
+                    <p class="card-text">
+                      Para pacientes, familias y cuidadores
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="section specialist" id="specialists" aria-labelledby="specialists-label">
+            <div class="container">
+              <p class="section-subtitle title-lg has-after" id="specialists-label">Nuestro Equipo</p>
+              <h2 class="headline-md">Especialistas en Discapacidad</h2>
+              <p class="section-text">
+                Contamos con profesionales capacitados en diferentes áreas para brindar atención integral.
+              </p>
+
+              <div class="specialist-selection">
+                <div class="specialist-card" data-reveal="left">
+                  <h3>Dra. Laura Gómez</h3>
+                  <p>Psiquiatra especializada en discapacidad psicosocial</p>
+                  <p>15 años de experiencia</p>
+                  <p>Enfoque en trastornos del neurodesarrollo</p>
+                </div>
+
+                <div class="specialist-card" data-reveal="right">
+                  <h3>Lic. Carlos Pérez</h3>
+                  <p>Terapeuta ocupacional</p>
+                  <p>10 años de experiencia</p>
+                  <p>Especialista en adaptaciones funcionales</p>
+                </div>
+              </div>
+
+              <div class="text-center" data-reveal="bottom">
+                <a href="../portal/index.html" class="btn has-before title-md">
+                  <ion-icon name="calendar-outline"></ion-icon>
+                  Agendar Cita con Especialista
+                </a>
+              </div>
+            </div>
+          </section>
+    </article>
+  </main>
+  <footer class="footer" style="background-image: url('img/footer-bg.png')">
+    <div class="container">
+      <div class="section footer-top">
+        <div class="footer-brand" data-reveal="bottom">
+          <a href="#" class="logo">
+            <img src="../img/logo-sld.png" width="136" height="46" loading="lazy" alt="SLD360 home">
+          </a>
+          <ul class="contact-list has-after">
+            <li class="contact-item">
+              <div class="item-icon">
+                <ion-icon name="mail-open-outline"></ion-icon>
+              </div>
+              <div>
+                <p>
+                  Correo principal : <a href="mailto:contacto@sld360.com"
+                    class="contact-link">contacto@&shy;sld360.com</a>
+                </p>
+                <p>
+                  Consultas : <a href="mailto:info@sld360.com" class="contact-link">info@sld360.com</a>
+                </p>
+              </div>
+            </li>
+            <li class="contact-item">
+              <div class="item-icon">
+                <ion-icon name="call-outline"></ion-icon>
+              </div>
+              <div>
+                <p>
+                  Teléfono : <a href="tel:+528126132158" class="contact-link">52 8126 132158</a>
+                </p>
+                <p>
+                  Urgencias : <a href="tel:+911" class="contact-link">911</a>
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-list" data-reveal="bottom">
+          <p class="headline-sm footer-list-title">Sobre Nosotros</p>
+          <p class="text">
+            Equipo de profesionales comprometidos con la sociedad y los derechos de las personas.
+          </p>
+          <address class="address">
+            <ion-icon name="map-outline"></ion-icon>
+            <span class="text">
+              León, Guanajuato, México
+          </address>
+        </div>
+        <ul class="footer-list" data-reveal="bottom">
+          <li>
+            <p class="headline-sm footer-list-title">Servicios</p>
+          </li>
+          <li>
+            <a href="../pages/maternidad.html" class="text footer-link">Maternidad</a>
+          </li>
+          <li>
+            <a href="../pages/adolescentes.html" class="text footer-link">Niños y Adolescentes</a>
+          </li>
+          <li>
+            <a href="../pages/adultosmayores.html" class="text footer-link">Adultos Mayores</a>
+          </li>
+          <li>
+            <a href="../pages/discapacidad.html" class="text footer-link">Discapacidad</a>
+          </li>
+          <li>
+            <a href="../pages/comunidad-rural.html" class="text footer-link">Comunidad Rural</a>
+          </li>
+          <li>
+            <a href="../pages/salud-sexual.html" class="text footer-link">Salud Sexual</a>
+          </li>
+        </ul>
+        <ul class="footer-list" data-reveal="bottom">
+          <li>
+            <p class="headline-sm footer-list-title">Enlaces Útiles</p>
+          </li>
+          <li>
+            <a href="#" class="text footer-link">Preguntas Frecuentes</a>
+          </li>
+          <li>
+            <a href="#" class="text footer-link">Términos y Condiciones</a>
+          </li>
+          <li>
+            <a href="#" class="text footer-link">Política de Privacidad</a>
+          </li>
+          <li>
+            <a href="#" class="text footer-link">Únete a Nuestro Equipo</a>
+          </li>
+          <li>
+            <a href="#" class="text footer-link">Blog de Salud</a>
+          </li>
+          <li>
+            <a href="#" class="text footer-link">Directorio Médico</a>
+          </li>
+        </ul>
+        <div class="footer-list" data-reveal="bottom">
+          <p class="headline-sm footer-list-title">Suscríbete</p>
+          <form action="" class="footer-form">
+            <input type="email" name="email" placeholder="Correo electrónico" class="input-field title-lg">
+            <button type="submit" class="btn has-before title-md">Suscribir</button>
+          </form>
+          <p class="text">
+            Recibe nuestras últimas noticias y artículos sobre salud familiar.
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="text copyright">
+          &copy; SLD360 2025 | Todos los derechos reservados
+        </p>
+        <ul class="social-list">
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/@NacionesUnidasVideo" class="social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up"></ion-icon>
+  </a>
+
+  <script src="../js/discapacidad.js"></script>
+  <script src="../js/index.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

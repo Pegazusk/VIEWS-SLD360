@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.web.WebView?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asd360.SLD360.VidaSexual.PrevencionController"
+            style="-fx-background-color: #f0f0f0; -fx-font-family: Arial, sans-serif;">
+
+    <center>
+        <VBox spacing="20" style="-fx-background-color: white; -fx-border-color: #007bff; -fx-border-radius: 10; -fx-padding: 40; -fx-alignment: center; -fx-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+
+            <Label text="Prevención y Ubicación" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #007bff; -fx-text-alignment: center; -fx-padding: 20;"/>
+
+            <WebView fx:id="mapView" prefWidth="1000" prefHeight="600" style="-fx-border-radius: 10px; -fx-border-color: #007bff; -fx-border-width: 1px;" />
+
+            <Button fx:id="obtenerUbicacionButton" text="Obtener Ubicación Actual"
+                    style="-fx-font-size: 18px; -fx-background-color: #007bff; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20; -fx-border-radius: 5px;" />
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" style="-fx-padding: 20;">
+            <Label text="© 2025 AS360 - Todos los derechos reservados." style="-fx-font-size: 14px; -fx-text-fill: #007bff;"/>
+        </HBox>
+    </bottom>
+</BorderPane>

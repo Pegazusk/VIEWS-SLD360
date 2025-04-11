@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital - Login y Registro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="css/pages/index.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div id="login-form">
+            <h2>Iniciar Sesión</h2>
+            <input type="text" id="txtCorreoLogin" placeholder="Correo electrónico" required>
+            <input type="password" id="txtClaveLogin" placeholder="Contraseña" required>
+            <button onclick="loguear()">Ingresar</button>
+            <p style="color:red;margin-top: 10px;" id="lblErrorLogin"></p>
+            <p class="toggle" onclick="toggleForms()">¿No tienes cuenta? Regístrate</p>
+        </div>
+        
+        <div id="register-form" class="hidden">
+            <h2>Registro</h2>
+            <input type="text" id="txtNombreRegistro" placeholder="Nombre (s)" required>
+            <input type="text" id="txtApellidoUnoRegistro" placeholder="Primer apellido" required>
+            <input type="text" id="txtApellidoDosRegistro" placeholder="Segundo apellido">
+            <input type="email" id="txtCorreoRegistro" placeholder="Correo electrónico" required>
+            <input type="password" id="txtClaveRegistro" placeholder="Contraseña" required>
+            <button onclick="registrar()">Registrarse</button>
+            <p style="color:red" id="lblErrorRegistro"></p>
+            <p class="toggle" onclick="toggleForms()">¿Ya tienes cuenta? Inicia Sesión</p>
+        </div>
+    </div>
+    
+    <script src="js/vendors/jquery.min.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/pages/index.js"></script>
+    
+    <script>
+        function toggleForms() {
+            document.getElementById('login-form').classList.toggle('hidden');
+            document.getElementById('register-form').classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

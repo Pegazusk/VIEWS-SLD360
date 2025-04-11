@@ -1,0 +1,30 @@
+/* Estilo para el texto de los menús principales */
+.menu {
+    -fx-background-color: #007bff; /* Color de fondo del menú */
+}
+
+.menu .label {
+    -fx-text-fill: white; /* Color del texto de los menús */
+    -fx-font-weight: bold;
+}
+
+.menu-item {
+    -fx-text-fill: black; /* Asegura que el texto de los MenuItem sea negro */
+    -fx-font-size: 16px;
+}
+
+/* Evitar que el fondo del MenuItem cambie de color al seleccionarlo */
+.menu-item:focused {
+    -fx-background-color: lightgray; /* Color cuando se selecciona un elemento */
+}
+
+.button-login {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-border-color: white;
+    -fx-border-radius: 5px;
+    -fx-padding: 5 15;
+}
+.button-login:hover {
+    -fx-background-color: rgba(255,255,255,0.1);
+}

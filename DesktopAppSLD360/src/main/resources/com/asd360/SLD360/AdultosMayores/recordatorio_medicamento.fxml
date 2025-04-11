@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="rootPane" style="-fx-background-color: #fafafa;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asd360.SLD360.AdultosMayores.RecordatorioMedicamento">
+
+    <center>
+        <!-- Usamos un AnchorPane para un mejor control del tamaño -->
+        <AnchorPane style="-fx-background-color: white; -fx-border-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 5);">
+            <!-- Ajustamos el VBox dentro del AnchorPane para que se centre y ocupe el espacio adecuadamente -->
+            <VBox alignment="CENTER" spacing="15" style="-fx-background-color: white; -fx-border-color: #e0e0e0; -fx-border-radius: 10; -fx-padding: 20; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 5);" AnchorPane.bottomAnchor="50" AnchorPane.leftAnchor="50" AnchorPane.rightAnchor="50" AnchorPane.topAnchor="50">
+                <!-- Título principal -->
+                <Label alignment="CENTER" maxWidth="300" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-padding: 0 0 15 0;" text="Recordatorio de Medicamento" textAlignment="CENTER" wrapText="true" />
+
+                <!-- Formulario de entradas -->
+                <GridPane alignment="CENTER" hgap="15" style="-fx-padding: 0 0 15 0;" vgap="10">
+                    <!-- Nombre del medicamento -->
+                    <Label style="-fx-font-size: 14px; -fx-text-fill: #34495e;" text="Medicamento:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="medicationName" style="-fx-font-size: 14px; -fx-background-color: white; -fx-border-color: #ccc; -fx-border-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                    <!-- Fecha -->
+                    <Label style="-fx-font-size: 14px; -fx-text-fill: #34495e;" text="Fecha (dd/MM/yyyy):" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="reminderDate" style="-fx-font-size: 14px; -fx-background-color: white; -fx-border-color: #ccc; -fx-border-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <!-- Hora -->
+                    <Label style="-fx-font-size: 14px; -fx-text-fill: #34495e;" text="Hora (HH:mm):" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <TextField fx:id="reminderTime" style="-fx-font-size: 14px; -fx-background-color: white; -fx-border-color: #ccc; -fx-border-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                </GridPane>
+
+                <!-- Botón para establecer el recordatorio -->
+                <Button onAction="#handleSetReminder" style="-fx-font-size: 14px; -fx-background-color: #007bff; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 18; -fx-border-radius: 5;" text="Establecer Recordatorio" />
+
+                <!-- Etiqueta de mensaje -->
+                <Label fx:id="messageLabel" style="-fx-font-size: 14px; -fx-text-fill: #34495e; -fx-wrap-text: true; -fx-padding: 15 0 0 0;" />
+            </VBox>
+        </AnchorPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<VBox style="-fx-background-color: #f0f0f0;" stylesheets="@style.css"
+      xmlns="http://javafx.com/javafx/18"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.asd360.SLD360.BaseController">
+
+    <!-- Barra superior con título -->
+    <ToolBar style="-fx-background-color: #007bff; -fx-pref-height: 60px;">
+        <Label onMouseClicked="#handleGoToIndex"
+               style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"
+               text="Salud Integral"/>
+    </ToolBar>
+
+    <!-- Contenedor para los menús -->
+    <HBox style="-fx-background-color: #007bff; -fx-pref-width: 100%;">
+        <!-- Menú principal (izquierda) -->
+        <MenuBar style="-fx-background-color: transparent; -fx-font-size: 18px; -fx-padding: 0;">
+            <Menu style="-fx-text-fill: white; -fx-font-weight: bold;" text="Maternidad">
+                <MenuItem onAction="#handleControl" style="-fx-font-size: 16px; -fx-text-fill: black;" text="Control Prenatal"/>
+                <MenuItem onAction="#handleNutricion" style="-fx-font-size: 16px; -fx-text-fill: black;" text="Nutrición Maternal"/>
+                <MenuItem onAction="#handleContracciones" style="-fx-font-size: 16px; -fx-text-fill: black;" text="Contracciones"/>
+            </Menu>
+
+            <Menu style="-fx-text-fill: white; -fx-font-weight: bold;" text="Niños/Adolescentes">
+                <MenuItem onAction="#handleVacunacion" style="-fx-font-size: 16px; -fx-text-fill: black;" text="Vacunación"/>
+                <MenuItem onAction="#handleFiebre" style="-fx-font-size: 16px; -fx-text-fill: black;" text="Fiebre"/>
+                <MenuItem onAction="#handleBullying" style="-fx-font-size: 16px; -fx-text-fill: black;" text="Bullying"/>
+            </Menu>
+
+            <Menu style="-fx-text-fill: white; -fx-font-weight: bold;" text="Adultos Mayores">
+                <MenuItem onAction="#handleDolorPecho" style="-fx-font-size: 16px; -fx-text-fill: black;" text="Dolor en el pecho"/>
+                <MenuItem onAction="#handleCaidas" style="-fx-font-size: 16px; -fx-text-fill: black;" text="Prevención Caídas"/>
+                <MenuItem onAction="#handleMedicamento" style="-fx-font-size: 16px; -fx-text-fill: black;" text="Recordatorio de medicamento"/>
+            </Menu>
+
+            <Menu style="-fx-text-fill: white; -fx-font-weight: bold;" text="Discapacidad">
+                <MenuItem onAction="#handleLengua" style="-fx-font-size: 16px; -fx-text-fill: black;" text="Lengua de señas"/>
+                <MenuItem onAction="#handleAnsiedad" style="-fx-font-size: 16px; -fx-text-fill: black;" text="Crisis de ansiedad"/>
+            </Menu>
+
+            <Menu style="-fx-text-fill: white; -fx-font-weight: bold;" text="Comunidad Rural">
+                <MenuItem onAction="#handleAtencionMovil" style="-fx-font-size: 16px; -fx-text-fill: black;" text="Atención Móvil"/>
+                <MenuItem onAction="#handleMordedura" style="-fx-font-size: 16px; -fx-text-fill: black;" text="Salud Preventiva"/>
+                <MenuItem onAction="#handleEducacion" style="-fx-font-size: 16px; -fx-text-fill: black;" text="Educación Sanitaria"/>
+            </Menu>
+
+            <Menu style="-fx-text-fill: white; -fx-font-weight: bold;" text="Vida Sexual">
+                <MenuItem onAction="#handleSalud" style="-fx-font-size: 16px; -fx-text-fill: black;" text="Salud Sexual"/>
+                <MenuItem onAction="#handleApoyoPsicologico" style="-fx-font-size: 16px; -fx-text-fill: black;" text="Apoyo Psicológico"/>
+                <MenuItem onAction="#handlePrevencion" style="-fx-font-size: 16px; -fx-text-fill: black;" text="Prevención"/>
+            </Menu>
+        </MenuBar>
+
+        <!-- Espaciador que empuja el menú de usuario a la derecha -->
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <!-- Menú de usuario (derecha) -->
+        <MenuBar style="-fx-background-color: transparent; -fx-padding: 0;">
+            <Menu>
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                        <Image url="@img/user-icon.png"/>
+                    </ImageView>
+                </graphic>
+                <items>
+                    <MenuItem fx:id="loginMenuItem" text="Iniciar Sesión" onAction="#handleAuthAction" style="-fx-text-fill: black;"/>
+                </items>
+            </Menu>
+        </MenuBar>
+    </HBox>
+
+    <!-- Contenedor principal para el contenido -->
+    <VBox spacing="10" VBox.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10" left="10" right="10" top="10"/>
+        </padding>
+        <BorderPane fx:id="rootPane" VBox.vgrow="ALWAYS"/>
+    </VBox>
+</VBox>

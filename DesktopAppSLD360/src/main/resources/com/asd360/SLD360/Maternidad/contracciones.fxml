@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/18"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.asd360.SLD360.Maternidad.Contracciones"
+            style="-fx-background-color: #eaeaea;">
+
+    <center>
+        <VBox spacing="15" style="-fx-padding: 20; -fx-alignment: center;">
+            <!-- Título y descripción -->
+            <Label text="Contador de Contracciones" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            <Label text="Este medidor registra la cantidad de contracciones en un período de tiempo."
+                   wrapText="true" style="-fx-font-size: 16px; -fx-text-fill: #34495e; -fx-max-width: 600px; -fx-alignment: center;"/>
+            <Label text="Aprende cuándo es el momento adecuado para acudir al hospital."
+                   wrapText="true" style="-fx-font-size: 16px; -fx-text-fill: #34495e; -fx-max-width: 600px; -fx-alignment: center;"/>
+
+            <!-- Tarjeta de Contador de Contracciones -->
+            <VBox spacing="10" style="-fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-radius: 10; -fx-padding: 20; -fx-min-width: 400px;">
+                <Label text="Registro de Contracciones" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                <VBox spacing="8">
+                    <Label text="Última Contracción: " fx:id="ultimaContraccionLabel" style="-fx-font-size: 16px; -fx-text-fill: #34495e;"/>
+                    <Label text="Tiempo Transcurrido: " fx:id="tiempoTranscurridoLabel" style="-fx-font-size: 16px; -fx-text-fill: #34495e;"/>
+                    <Label text="Total de Contracciones: " fx:id="totalContraccionesLabel" style="-fx-font-size: 16px; -fx-text-fill: #34495e;"/>
+
+                    <Button text="Registrar Contracción" onAction="#registrarContraccion"
+                            style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 10;"/>
+                    <Button text="Detener Contracción" onAction="#detenerContraccion"
+                            style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 10;"
+                            disable="true" fx:id="detenerButton"/>
+                    <Button text="Reiniciar Contador" onAction="#reiniciarContador"
+                            style="-fx-background-color: #7f8c8d; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 10;"/>
+                </VBox>
+            </VBox>
+
+            <!-- Tarjeta de Historial de Contracciones -->
+            <VBox fx:id="historialCard" visible="false"
+                  style="-fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-radius: 10; -fx-padding: 20; -fx-min-width: 400px;">
+                <Label text="Historial de Contracciones" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                <VBox spacing="10">
+                    <ListView fx:id="historialList" style="-fx-control-inner-background: white; -fx-font-size: 14px; -fx-text-fill: #34495e;"/>
+                </VBox>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+
+<VBox alignment="CENTER" spacing="25" prefWidth="600" prefHeight="500"
+      xmlns="http://javafx.com/javafx/18"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.asd360.SLD360.Controller.Login.Registro"
+      style="-fx-background-color: linear-gradient(to bottom, #f5f7fa, #e4e8f0); -fx-padding: 30px;">
+
+    <Label text="Crear Cuenta" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;">
+        <font>
+            <Font name="Segoe UI" size="28"/>
+        </font>
+    </Label>
+
+    <VBox alignment="CENTER" spacing="20" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 30px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 3);">
+        <!-- Reemplaza el GridPane existente con este: -->
+        <GridPane hgap="15" vgap="15" alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" prefWidth="150"/>
+                <ColumnConstraints halignment="LEFT" prefWidth="250"/>
+            </columnConstraints>
+
+            <Label text="Nombre de usuario:" style="-fx-font-size: 14px; -fx-text-fill: #34495e;" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="newUsernameField" promptText="Mínimo 5 caracteres" style="-fx-font-size: 14px; -fx-pref-height: 35px;" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+            <Label text="Contraseña:" style="-fx-font-size: 14px; -fx-text-fill: #34495e;" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <PasswordField fx:id="newPasswordField" promptText="Mínimo 8 caracteres" style="-fx-font-size: 14px; -fx-pref-height: 35px;" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+            <Label text="Confirmar contraseña:" style="-fx-font-size: 14px; -fx-text-fill: #34495e;" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <PasswordField fx:id="confirmPasswordField" promptText="Repita su contraseña" style="-fx-font-size: 14px; -fx-pref-height: 35px;" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        </GridPane>
+
+        <!-- Dentro del HBox de botones, añade esto: -->
+        <HBox spacing="20" alignment="CENTER">
+            <Button text="REGISTRARSE" onAction="#handleRegister" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: white; -fx-background-color: #27ae60; -fx-background-radius: 5; -fx-pref-width: 150px; -fx-pref-height: 40px;"/>
+            <Button text="VOLVER AL LOGIN" onAction="#handleBackToLogin" style="-fx-font-size: 14px; -fx-text-fill: #2c3e50; -fx-background-color: #ecf0f1; -fx-background-radius: 5; -fx-pref-width: 150px; -fx-pref-height: 40px;"/>
+        </HBox>
+    </VBox>
+
+    <Label fx:id="errorLabel" style="-fx-font-size: 13px; -fx-text-fill: #e74c3c; -fx-font-weight: bold; -fx-wrap-text: true;" maxWidth="400"/>
+    <Label fx:id="successLabel" style="-fx-font-size: 13px; -fx-text-fill: #27ae60; -fx-font-weight: bold; -fx-wrap-text: true;" maxWidth="400"/>
+</VBox>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.web.WebView?>
+
+<ScrollPane fitToWidth="true" xmlns="http://javafx.com/javafx/18"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.asd360.SLD360.ComunidadRural.MordeduraSerpienteController"
+            style="-fx-background-color: #f0f0f0; -fx-padding: 20px;">
+
+    <VBox spacing="20" style="-fx-background-color: white; -fx-border-color: #ccc; -fx-border-radius: 10; -fx-padding: 30px;">
+        <!-- Título principal -->
+        <Label text="📌 Mordedura de Serpiente - Protocolo de Emergencia"
+               style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #007bff;" />
+
+        <!-- Descripción -->
+        <Label text="Las mordeduras de serpiente pueden ser graves. Sigue estos pasos de emergencia:"
+               style="-fx-font-size: 16px; -fx-text-fill: #333333;" wrapText="true" />
+
+        <!-- Protocolo de emergencia -->
+        <GridPane hgap="20" vgap="20">
+            <!-- Paso 1 -->
+            <ImageView fitWidth="120" fitHeight="120" preserveRatio="true" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                <image>
+                    <Image url="@../../../../../java/com/asd360/SLD360/img/Mantén la calma.png" />
+                </image>
+            </ImageView>
+            <Label text="🚨 Mantén la calma y aleja a la persona del área donde ocurrió la mordedura."
+                   style="-fx-font-size: 16px; -fx-text-fill: #333333;" wrapText="true" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+            <!-- Paso 2 -->
+            <ImageView fitWidth="120" fitHeight="120" preserveRatio="true" GridPane.rowIndex="1" GridPane.columnIndex="0">
+                <image>
+                    <Image url="@../../../../../java/com/asd360/SLD360/img/hospital.jpg" />
+                </image>
+            </ImageView>
+            <Label text="🩹 Inmoviliza la extremidad afectada y mantenla por debajo del nivel del corazón."
+                   style="-fx-font-size: 16px; -fx-text-fill: #333333;" wrapText="true" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+            <!-- Paso 3 -->
+            <ImageView fitWidth="120" fitHeight="120" preserveRatio="true" GridPane.rowIndex="2" GridPane.columnIndex="0">
+                <image>
+                    <Image url="@../../../../../java/com/asd360/SLD360/img/no.png" />
+                </image>
+            </ImageView>
+            <Label text="🚫 No succiones el veneno ni realices cortes en la herida."
+                   style="-fx-font-size: 16px; -fx-text-fill: #333333;" wrapText="true" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+            <!-- Paso 4 -->
+            <ImageView fitWidth="120" fitHeight="120" preserveRatio="true" GridPane.rowIndex="3" GridPane.columnIndex="0">
+                <image>
+                    <Image url="@../../../../../java/com/asd360/SLD360/img/limpiar.jpg" />
+                </image>
+            </ImageView>
+            <Label text="💧 Limpia la herida con agua y jabón, pero no apliques hielo ni torniquetes."
+                   style="-fx-font-size: 16px; -fx-text-fill: #333333;" wrapText="true" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+        </GridPane>
+
+        <!-- Botón para llamar a emergencias -->
+        <Button text="📞 Llamar a Emergencias (911)" onAction="#handleEmergencyCall"
+                style="-fx-font-size: 16px; -fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 15px;" />
+
+        <!-- Título para video -->
+        <Label text="Video del protocolo de emergencia:"
+               style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #007bff;" />
+
+        <!-- WebView para el video -->
+        <WebView fx:id="webView" prefWidth="640" prefHeight="360" />
+    </VBox>
+</ScrollPane>
